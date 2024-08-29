@@ -1,0 +1,48 @@
+<div class="background"></div>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Info Travel</h1>
+
+    
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4 class="card-title">Ciudad</h4>
+                <p class="card-text">{{infoTravel.city}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4 class="card-title">Temperatura</h4>
+                <p class="card-text">{{infoTravel.tempCity}} °C</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4 class="card-title">Moneda Local</h4>
+                <p class="card-text">{{infoTravel.localMoney}}</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4 class="card-title">Presupuesto en Moneda Local</h4>
+                <p class="card-text">{{infoTravel.currencySymbol}}{{infoTravel.money * infoTravel.ratesCurrency}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="card p-3">
+                <h4 class="card-title">Tasa de Cambio</h4>
+                <p class="card-text">{{infoTravel.ratesCurrency}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-secondary" (click)="goBack()">Volver</button>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="background"></div>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">TravelApp</h1>
+    <div *ngIf="showAlert" class="alert alert-warning d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Warning:">
+            <use xlink:href="#exclamation-triangle-fill"/>
+        </svg>
+        <div>
+            Todos los campos deben ser llenados para poder consultar.
+        </div>
+    </div>
+
+
+    <div class="form-wrapper">        
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="city" class="form-label">Selecciona la Ciudad</label>
+                <select class="form-select" aria-label="Default select example" formControlName="city" id="city">
+                    <option selected disabled>Selecciona</option>
+                    <option value="London">London</option>
+                    <option value="New York">New York</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Tokyo">Tokyo</option>
+                    <option value="Madrid">Madrid</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="money" class="form-label">Ingresa el presupuesto</label>
+                <input type="number" class="form-control" formControlName="money" id="money" placeholder="Ingresa el presupuesto en COP">
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Consultar</button>
+            </div>
+        </form>
+        <div *ngIf="loading" class="text-center mt-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
