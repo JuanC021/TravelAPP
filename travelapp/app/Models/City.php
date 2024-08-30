@@ -11,5 +11,5 @@ class City extends Model
 
     protected $table = 'cities'; 
 
-    protected $fillable = ['name', 'currency', 'symbol', 'exchange_rate']; // Campos que se pueden llenar masivamente
+    protected $fillable = ['name', 'currency', 'symbol', 'exchange_rate']; //Campos relacionados en la BD
 }

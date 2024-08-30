@@ -16,7 +16,6 @@ export class HttpService {
     const url = `${this.weatherApiUrl}?q=${city}&appid=d335da3c7d896fa8d25e9b2cc6f90c82&units=metric`;
     return this.http.get<any>(url);
   }
-
   getCurrenci(): Observable<any> {
     return this.http.get<any>('https://api.exchangerate-api.com/v4/latest/COP');
   }
