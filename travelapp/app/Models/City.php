@@ -9,7 +9,9 @@ class City extends Model
 {
     use HasFactory;
 
+     // Se especifica la tabla en la base de datos que está relacionada con este modelo.
     protected $table = 'cities'; 
 
-    protected $fillable = ['name', 'currency', 'symbol', 'exchange_rate']; //Campos relacionados en la BD
+    // Se define qué campos de la tabla se pueden llenar de forma masiva.
+    protected $fillable = ['name', 'currency', 'symbol', 'exchange_rate']; 
 }
