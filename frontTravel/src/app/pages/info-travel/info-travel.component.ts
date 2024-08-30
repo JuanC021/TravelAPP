@@ -8,18 +8,7 @@ import { Router } from '@angular/router';
 })
 export class InfoTravelComponent implements OnInit {
 
-  public infoTravel: any; 
-
-
-  //Un mapa que asocia códigos de moneda (como GBP, USD, EUR, JPY) con sus respectivos símbolos (£, $, €, ¥). Utilizado para determinar el símbolo correcto para la moneda local.
-  private currencySymbolMap: { [key: string]: string } = {
-    GBP: '£',
-    USD: '$',
-    EUR: '€',
-    JPY: '¥'
-  };
-
-
+  public infoTravel: any;
 
   constructor(private router: Router) { }
 
@@ -30,18 +19,11 @@ export class InfoTravelComponent implements OnInit {
     if (dataLocalStorage) {
       this.infoTravel = JSON.parse(dataLocalStorage);
       console.log(this.infoTravel);
-
-      // Asigna el símbolo de la moneda local
-      if (this.infoTravel && this.infoTravel.localMoney) {
-        this.infoTravel.currencySymbol = this.currencySymbolMap[this.infoTravel.localMoney] || '';
-      }
     } 
   }
 
-
-
   goBack() {
-    this.router.navigate(['/']); 
+    this.router.navigate(['/']);
   }
 
 }
